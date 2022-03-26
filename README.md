@@ -4,7 +4,7 @@
 
 <img src="https://github.com/brianweidl/Api-Dogs-React-App/blob/main/client/src/Images/logo-header.PNG?raw=true">
 
-My Recipes is a Fully-Responsive React application that interacts with the [Spoonacular API](https://spoonacular.com/food-api) that has +5000 recipes.It also works with PostgreSQL and sequelize ORM to save the user's recipes.
+React application that interacts with the [Dogs API](https://thedogapi.com/)
 
 
  ## Key Features
@@ -17,7 +17,7 @@ My Recipes is a Fully-Responsive React application that interacts with the [Spoo
 
 * Add favorites
 
-- Controlled form for creating your own recipes
+- Controlled form for creating your own dogs
 
 ## How to use
 
