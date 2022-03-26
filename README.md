@@ -1,24 +1,21 @@
-<p align='left'>
-    <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
-</p>
+
 
 # Dogs React App
 
-<img src="https://github.com/brianweidl/My-Recipes-React-App/blob/main/client/src/Images/recipes-icon.png?raw=true">
+<img src="https://github.com/brianweidl/Api-Dogs-React-App/blob/main/client/src/Images/logo-header.PNG?raw=true">
 
 My Recipes is a Fully-Responsive React application that interacts with the [Spoonacular API](https://spoonacular.com/food-api) that has +5000 recipes.It also works with PostgreSQL and sequelize ORM to save the user's recipes.
 
-<img src="https://github.com/brianweidl/My-Recipes-React-App/blob/main/client/src/Images/home.png?raw=true"/>
 
  ## Key Features
 
 * Single Page Application
 
-- Filter through the API's recipes or the database recipes
+- Filter through the API's  or database dogs
 
 * SearchBar
 
-* Pagination
+* Add favorites
 
 - Controlled form for creating your own recipes
 
@@ -51,3 +48,7 @@ $ npm install
 # Run the frontend
 $ npm start
 ```
+
+<p align='left'>
+    <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
+</p>
