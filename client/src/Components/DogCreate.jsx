@@ -14,7 +14,7 @@ function DogCreate({ temperaments, getTemperaments }) {
 			}
 			getAllTemperaments()
 		}
-	}, [])
+	}, [getTemperaments, temperaments.length])
 
 	const [input, setInput] = useState({
 		name: '',

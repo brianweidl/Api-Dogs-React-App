@@ -8,6 +8,7 @@ import {
 	filterByWeight,
 	getTemperaments,
 	filterByTemperament,
+	filterByName,
 } from '../Actions/Actions'
 import { useState, useEffect } from 'react'
 
@@ -23,6 +24,7 @@ function Filters({
 	//States to re-render child and set current page back to 1 whenever we filter data
 	let [filtered, setFiltered] = useState(0)
 	let [currentPage, setCurrentPage] = useState(1)
+	let [dogsPerPage, setDogsPerPage] = useState(8)
 
 	//This hook dispatch an action to set the temperaments available in the Redux store
 	useEffect(() => {
@@ -92,6 +94,14 @@ function Filters({
 			setCurrentPage(1)
 		}
 	}
+	let searchByName = () => {
+		setFiltered(() => {
+			return filtered + 1
+		})
+		let input = document.getElementById('inputName')
+
+		filterByName(input.value)
+	}
 
 	//Filter by temperament
 	let selectTemperament = () => {
@@ -103,14 +113,30 @@ function Filters({
 
 	return (
 		<div>
+			<div className="searchBar">
+				<input placeholder="search..." id="inputName"></input>
+				<button onClick={() => searchByName()}>X</button>
+			</div>
 			<div>
 				<div>Temperament:</div>
 				<select id="temperament">
-					{temperaments.map((temp, index) => (
-						<option key={index}>{temp.name}</option>
-					))}
+					{temperaments ? (
+						temperaments.map((temp, index) => (
+							<option key={index}>{temp.name}</option>
+						))
+					) : (
+						<option></option>
+					)}
 				</select>
 				<button onClick={() => selectTemperament()}>BOTON</button>
+			</div>
+			<div>
+				<label>Dogs per Page</label>
+				<input
+					type="text"
+					placeholder="8"
+					onChange={(e) => setDogsPerPage(e.target.value)}
+				></input>
 			</div>
 			<div>
 				Source:
@@ -142,6 +168,7 @@ function Filters({
 				filtered={filtered}
 				currentPage={currentPage}
 				setCurrentPage={setCurrentPage}
+				dogsPerPage={dogsPerPage}
 			></Dogs>
 		</div>
 	)
@@ -161,6 +188,7 @@ function mapDispatchToProps(dispatch) {
 		filterByWeight: (sort) => dispatch(filterByWeight(sort)),
 		getTemperaments: (temperaments) => dispatch(getTemperaments(temperaments)),
 		filterByTemperament: (temp) => dispatch(filterByTemperament(temp)),
+		filterByName: (name) => dispatch(filterByName(name)),
 	}
 }
 

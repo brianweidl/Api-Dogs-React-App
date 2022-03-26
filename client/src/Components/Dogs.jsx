@@ -3,18 +3,21 @@ import axios from 'axios'
 import { getAllDogs } from '../Actions/Actions'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import styles from '../Styles/dogs.module.css'
-
+/* import styles from '../Styles/dogs.module.css'
+ */
 //Component to display the dogs information and paginate
-function Dogs({ getAllDogs, filteredDogs, currentPage, setCurrentPage }) {
+function Dogs({
+	getAllDogs,
+	filteredDogs,
+	currentPage,
+	setCurrentPage,
+	dogsPerPage,
+}) {
 	const imgStyle = {
 		width: '80px',
 		height: '80px',
 	}
 	const [isLoading, setLoading] = useState(false)
-
-	//Dogs to be shown for each page
-	const dogsPerPage = 8
 
 	//When the component renders, send a GET request to our server to get the dogs data
 	useEffect(() => {
@@ -25,7 +28,7 @@ function Dogs({ getAllDogs, filteredDogs, currentPage, setCurrentPage }) {
 			setLoading(false)
 		}
 		axiosDogs()
-	}, [])
+	}, [getAllDogs])
 
 	//Set variables for pagination
 	const indexOfLastDog = currentPage * dogsPerPage
@@ -69,7 +72,11 @@ function Dogs({ getAllDogs, filteredDogs, currentPage, setCurrentPage }) {
 												: `${dog.weight}`}
 										</div>
 										<div>Temperament: {dog.temperaments}</div>
-										<img src={dog.image} style={imgStyle}></img>
+										<img
+											src={dog.image}
+											alt="dogs breed"
+											style={imgStyle}
+										></img>
 										<Link
 											to={{
 												pathname: '/dog-detail',
