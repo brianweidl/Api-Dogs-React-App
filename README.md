@@ -1,10 +1,10 @@
 
 
-# Dogs React App
+# Dogs React App (in progress)
 
 <img src="https://github.com/brianweidl/Api-Dogs-React-App/blob/main/client/src/Images/logo-header.PNG?raw=true">
 
-React application that interacts with the [Dogs API](https://thedogapi.com/)
+React application that interacts with the [Dogs API](https://thedogapi.com/).
 
 
  ## Key Features
